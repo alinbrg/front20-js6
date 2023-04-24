@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	transition: all 0.3s;
+}
+section {
+	max-width: 1440px;
+	width: 98%;
+	margin: 20px auto;
+}
+button {
+	padding: 10px;
+	border: none;
+	background: darkcyan;
+	cursor: pointer;
+	margin: 10px 0;
+	color: white;
+}
+
+.img {
+	width: 100%;
+}
+
+#images-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 20px;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+}
+.card .img {
+	height: 300px;
+	object-fit: cover;
+}
+.actions {
+	margin-top: auto;
+}
+
+.title {
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+.more-info {
+	opacity: 0;
+}
+.more-info.active {
+	opacity: 1;
+}
+button.delete {
+	background-color: red;
+}
+
+/* slider */
+.slider {
+	width: 100%;
+	position: relative;
+}
+.slider-wrapper {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+}
+
+.slide {
+	display: none;
+	position: absolute;
+	/* transform: scale(0); */
+	opacity: 0;
+	width: 0;
+	visibility: hidden;
+	transition: all 0.5s;
+	top: 0;
+	left: -100%;
+}
+.slide.active {
+	display: block;
+	/* transform: scale(1); */
+	width: 100%;
+	opacity: 1;
+	visibility: visible;
+	position: relative;
+	left: 0;
+}
+
+.slide .img {
+	height: 450px;
+	object-fit: cover;
+}
+.desc {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 70%;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.slide-btn {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	color: white;
+	font-size: 30px;
+	border-radius: 50%;
+	background-color: darkorchid;
+}
+
+.slide-btn.next {
+	left: unset;
+	right: 20px;
+}
